@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import hero from "./images/hero.jpg"
 import img1 from "./images/img-01.jpg"
 import img2 from "./images/img-03.jpg"
@@ -13,7 +13,8 @@ import avatar2 from "./images/ava-02.png"
 import avatar3 from "./images/ava-03.png"
 import avatar4 from "./images/ava-04.png"
 
-function Home() {
+function Home({modal}) {
+
   return (
   <>  <div className="Header">
          <div className="HeaderContent row container">
@@ -30,7 +31,7 @@ function Home() {
         </div>
 
         <div className="col-lg-4">
-          <img src={hero}/>
+          <img src={hero} alt="images"/>
         </div>
 
       </div>
@@ -44,7 +45,7 @@ function Home() {
       </div>
       <div className="AuctionContainer row  ">
         <div className="AuctionNft col-lg-3">
-          <img src={img1}/>
+          <img src={img1} alt="images"/>
 
           <div>
             <p>Alexson</p>
@@ -63,7 +64,7 @@ function Home() {
             </div>
 
             <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
+    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}} onClick={modal}>Place a Bid</button>
     <span>View History</span>
   </div>
 
@@ -145,7 +146,262 @@ function Home() {
       </div>
 
     </div>
+    <div className="Sellers container">
+      <h2>Top Seller</h2>
+      <div className="sellers">
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
 
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+         <div style={{display:'flex'}} className="m-3">
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+         <div style={{display:'flex'}} className="m-3">
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar4}style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div className="Sellers container">
+      
+      <div className="sellers">
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+         <div style={{display:'flex'}} className="m-3">
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+         <div style={{display:'flex'}} className="m-3">
+          <img src={avatar2} style={{width:'50px',height:'50px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+        <div style={{display:'flex'}} className="m-3">
+          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <div>
+            <h4>Jennifer</h4>
+            <p>5.99ETH</p>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
 
     <div className="Auction container" style={{marginBottom:'20px'}}>
       <div style={{display:'flex',justifyContent:'space-between'}}>
@@ -362,134 +618,7 @@ function Home() {
     </div>
 
 
-    <div className="Sellers container">
-      <h2>Top Seller</h2>
-      <div className="sellers">
-        <div style={{display:'flex'}}>
-          <img src={avatar1} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar2} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar3} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar1} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar1} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar3} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar1} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar4} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar3} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-         <div style={{display:'flex'}}>
-          <img src={avatar2} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar3} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-         <div style={{display:'flex'}}>
-          <img src={avatar2} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar2} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar3} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}}>
-          <img src={avatar4} style={{width:'100px',height:'100px',borderRadius:'50%'}}/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-
-      </div>
-
-
-    </div>
+ 
 
 
     <div className="SellContainer container">
@@ -510,7 +639,7 @@ function Home() {
                   <h4>1</h4>
           </div>
           <div>
-            <h2>SetUp your wallet</h2>
+            <h2>Create your collection</h2>
             <p>Discover rare digital art and collect sell extraordinary NFTsDiscover rare digital art and collect sell extraordinary NFTsDiscover rare digital
                art and collect sell extraordinary NFT</p>
           </div>
@@ -520,7 +649,7 @@ function Home() {
                   <h4>1</h4>
           </div>
           <div>
-            <h2>SetUp your wallet</h2>
+            <h2>Add your NFTs</h2>
             <p>Discover rare digital art and collect sell extraordinary NFTsDiscover rare digital art and collect sell extraordinary NFTsDiscover rare digital
                art and collect sell extraordinary NFT</p>
           </div>
