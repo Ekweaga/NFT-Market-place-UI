@@ -322,6 +322,17 @@ li{
   color: #fff;
   border-bottom: 1px solid #5142fc;
 }
+
+select{
+  padding:8px 25px;
+  font-size:0.9rem;
+  color:white;
+  background:black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top:20px;
+  border: 1px solid crimson;
+}
 .Header{
   display:flex;
  
@@ -374,6 +385,10 @@ li{
   height:200px;
   border-radius: 5px;
 }
+.SellContainer{
+  width:80%;
+  margin:auto;
+}
 
 .sell{
   display:flex;
@@ -381,8 +396,8 @@ li{
 }
 
 .nfts{
-  width:280px;
-  height:max-content;
+  width:250px;
+  height:330px;
   background:black;
   padding-top:8px;
 
@@ -418,9 +433,49 @@ li{
   justify-content: center;
 }
 
+.Detail{
+  width:80%;
+  margin: 40px auto;
+}
+.Img img{
+  width:500px;
+  height:400px;
+}
+.Img{
+  background:#28040B;
+  padding:10px;
+  height:max-content;
+}
+.DetailInfo{
+  display:flex;
+  
+  
+  flex-direction: column;
+}
+.DetailInfo img{
+  width:100px;
+  height:100px;
+}
 
-
-
+@media only screen and (max-width: 992px) {
+  .sell{
+    width:100%;
+  }
+  .nfts{
+    width:100%;
+    margin-bottom: 10px;
+    margin-left:10px;
+  }
+  .SellContainer{
+    width:80%;
+  }
+  .Detail{
+    width:100%;
+  }
+  .Img img{
+    width:340px;
+  }
+}
 
 @media only screen and (max-width: 992px) {
   .nft__title {

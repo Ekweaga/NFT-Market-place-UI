@@ -5,7 +5,44 @@ import {Link} from "react-router-dom"
 function Market() {
   const [data,setData] = useState(NFT__DATA)
 
-  const handleCategory = () => {};
+  const handleCategory = (e) => {
+    const filterValue = e.target.value;
+
+    if (filterValue === "art") {
+      const filterData = NFT__DATA.filter((item) => item.category === "Art");
+
+      setData(filterData);
+    }
+
+
+    if (filterValue === "music") {
+      const filterData = NFT__DATA.filter((item) => item.category === "Music");
+
+      setData(filterData);
+    }
+   
+
+    if (filterValue === "domain-name") {
+      const filterData = NFT__DATA.filter((item) => item.category === "Domain Name");
+
+      setData(filterData);
+    }
+   
+
+    if (filterValue === "virtual-world") {
+      const filterData = NFT__DATA.filter((item) => item.category === "Virtual World");
+
+      setData(filterData);
+    }
+   
+
+    if (filterValue === "all") {
+     
+
+      setData(NFT__DATA);
+    }
+
+  };
 
   const handleItems = () => {};
 
@@ -44,12 +81,12 @@ function Market() {
 <section>
         <div className="container">
           <div className="row">
-            <div classname="col-lg-12" className="mb-5">
+            <div className="col-lg-12 mb-5" >
               <div className="market__product__filter d-flex align-items-center justify-content-between">
-                <div className="filter__left d-flex align-items-center gap-5">
+                <div className="filter__left ">
                   <div className="all__category__filter">
                     <select onChange={handleCategory}>
-                      <option>All Categories</option>
+                      <option value="all">All Categories</option>
                       <option value="art">Art</option>
                       <option value="music">Music</option>
                       <option value="domain-name">Domain Name</option>
@@ -87,7 +124,7 @@ function Market() {
 
       <div className="nft__content">
         <h5 className="nft__title">
-          <Link to={`/market/${item.id}`}>{item.title}</Link>
+          <Link to={`/details/${item.id}`}>{item.title}</Link>
         </h5>
 
         <div className="creator__info-wrapper d-flex gap-3">

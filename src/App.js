@@ -8,6 +8,8 @@ import NftDetails from './NftDetails';
 import Contact from './Contact';
 import Market from './Market';
 import Modal from './Modal';
+import Login from './Login';
+import Connect from './Connect';
 
 
 function App() {
@@ -36,6 +38,13 @@ function App() {
         </Route>
         <Route path="/market">
           <Market/>
+        </Route>
+        <Route path="/wallet">
+          <Connect/>
+        </Route>
+          
+        <Route path="/login">
+          <Login/>
         </Route>
       </Switch>
       {

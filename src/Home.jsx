@@ -1,19 +1,17 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import hero from "./images/hero.jpg"
-import img1 from "./images/img-01.jpg"
-import img2 from "./images/img-03.jpg"
-import img3 from "./images/img-04.jpg"
-import img4 from "./images/img-05.jpg"
-import img5 from "./images/img-07.jpg"
-import img6 from "./images/img-08.jpg"
-import img7 from "./images/img-05.jpg"
-import img8 from "./images/img-09.jpg"
+
 import avatar1 from "./images/ava-01.png"
 import avatar2 from "./images/ava-02.png"
 import avatar3 from "./images/ava-03.png"
 import avatar4 from "./images/ava-04.png"
+import {NFT__DATA} from "./data.js"
+import {Link} from "react-router-dom"
+import {BiPencil} from "react-icons/bi"
+import {MdOutlineExplore} from "react-icons/md"
 
 function Home({modal}) {
+ 
 
   return (
   <>  <div className="Header">
@@ -26,7 +24,7 @@ function Home({modal}) {
              </p>
 
             <div style={{display:'flex',gap:'20px'}} className="mb-5">
-               <button>Explore</button> <button>Create</button>
+               <button><MdOutlineExplore/>Explore</button> <button><BiPencil/> Create</button>
             </div>
         </div>
 
@@ -41,116 +39,69 @@ function Home({modal}) {
     <div className="Auction container" style={{marginBottom:'100px'}}>
       <div style={{display:'flex',justifyContent:'space-between'}}>
         <h3>Live Auction</h3>
-        <span>Explore</span>
+        <span> <button style={{background:'transparent',color:'white',border:'1px solid white',width:'100px',borderRadius:'20px'}}><MdOutlineExplore/>Explore</button></span>
+      </div><br/><br/>
+      <div className="container row">
+        
+      {NFT__DATA?.slice(0,4).map((item) => (
+              <div className="col-lg-3 mb-4 md-4 sm-6"  key={item.id}>
+              <div className="single__nft__card">
+      <div className="nft__img">
+        <img src={item.imgUrl} alt="" className="w-100" />
       </div>
-      <div className="AuctionContainer row  ">
-        <div className="AuctionNft col-lg-3">
-          <img src={img1} alt="images"/>
 
-          <div>
-            <p>Alexson</p>
+      <div className="nft__content">
+        <h5 className="nft__title">
+          <Link to={`/details/${item.id}`}>{item.title}</Link>
+        </h5>
+
+        <div className="creator__info-wrapper d-flex gap-3">
+          <div className="creator__img">
+            <img src={item.creatorImg} alt="" className="w-100" />
           </div>
-            <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-              <div style={{display:'flex'}}>
-              <img className="avatar" src={avatar1} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-              <div>
-                <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-              </div>
-              </div>
-              <div>
-                    <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-              </div>
-               
+
+          <div className="creator__info w-100 d-flex align-items-center justify-content-between">
+            <div>
+              <h6>Created By</h6>
+              <p>{item.creator}</p>
             </div>
 
-            <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}} onClick={modal}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-
-        </div>
-        <div className="AuctionNft col-lg-3">
-        <img src={img2}/>
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar2} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-        </div>
-        <div className="AuctionNft col-lg-3">
-        <img src={img3}/>
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar3} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-        </div>
-        <div className="AuctionNft col-lg-3">
-          <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>   <img src={img4}/></div>
-      
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar4} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
+            <div>
+              <h6>Current Bid</h6>
+              <p>{item.currentBid} ETH</p>
+            </div>
+          </div>
         </div>
 
+        <div className=" mt-3 d-flex align-items-center justify-content-between">
+          <button
+            className="bid__btn d-flex align-items-center gap-1"
+        
+          >
+            <i class="ri-shopping-bag-line"></i> Buy
+          </button>
 
+         
+
+          <span className="history__link">
+            <Link to="#">View History</Link>
+          </span>
+        </div>
+      </div>
+    </div>
+              </div>
+            ))}
+      </div>
+    
       </div>
 
-    </div>
+
+   
     <div className="Sellers container">
-      <h2>Top Seller</h2>
+      
       <div className="sellers">
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -158,7 +109,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -166,7 +117,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -174,7 +125,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -182,7 +133,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -190,7 +141,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -198,7 +149,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -206,7 +157,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -214,7 +165,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -222,7 +173,7 @@ function Home({modal}) {
           </div>
         </div>
          <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -230,7 +181,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -238,7 +189,7 @@ function Home({modal}) {
           </div>
         </div>
          <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar2} style={{width:'50px',height:'50px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -246,7 +197,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -254,7 +205,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -262,7 +213,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar4}style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -274,11 +225,12 @@ function Home({modal}) {
 
 
     </div>
+
     <div className="Sellers container">
       
       <div className="sellers">
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -286,7 +238,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -294,7 +246,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -302,7 +254,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -310,7 +262,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -318,7 +270,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -326,7 +278,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -334,7 +286,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -342,7 +294,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -350,7 +302,7 @@ function Home({modal}) {
           </div>
         </div>
          <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -358,7 +310,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -366,7 +318,7 @@ function Home({modal}) {
           </div>
         </div>
          <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'50px',height:'50px',borderRadius:'50%'}}/>
+          <img src={avatar2} style={{width:'50px',height:'50px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -374,7 +326,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -382,7 +334,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -390,7 +342,7 @@ function Home({modal}) {
           </div>
         </div>
         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}}/>
+          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
           <div>
             <h4>Jennifer</h4>
             <p>5.99ETH</p>
@@ -408,220 +360,118 @@ function Home({modal}) {
         <h3>Trending</h3>
         
       </div>
-      <div className="AuctionContainer row  ">
-        <div className="AuctionNft col-lg-3">
-          <img src={img5}/>
 
-          <div>
-            <p>Alexson</p>
-          </div>
-            <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-              <div style={{display:'flex'}}>
-              <img className="avatar" src={avatar1} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-              <div>
-                <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-              </div>
-              </div>
-              <div>
-                    <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-              </div>
-               
+      <div className="container row">
+        
+        {NFT__DATA?.slice(2,6).map((item) => (
+                <div className="col-lg-3 mb-4 md-4 sm-6"  key={item.id}>
+                <div className="single__nft__card">
+        <div className="nft__img">
+          <img src={item.imgUrl} alt="" className="w-100" />
+        </div>
+  
+        <div className="nft__content">
+          <h5 className="nft__title">
+            <Link to={`/details/${item.id}`}>{item.title}</Link>
+          </h5>
+  
+          <div className="creator__info-wrapper d-flex gap-3">
+            <div className="creator__img">
+              <img src={item.creatorImg} alt="" className="w-100" />
             </div>
-
-            <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-
-        </div>
-        <div className="AuctionNft col-lg-3">
-        <img src={img2}/>
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar2} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-        </div>
-        <div className="AuctionNft col-lg-3">
-        <img src={img8}/>
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar3} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-        </div>
-        <div className="AuctionNft col-lg-3">
-          <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>   <img src={img4}/></div>
-      
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar4} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-        </div>
-
-
-      </div>
-
-    </div>
-    <div className="Auction container" style={{marginBottom:'100px'}}>
-     
-      <div className="AuctionContainer row  ">
-        <div className="AuctionNft col-lg-3">
-          <img src={img6}/>
-
-          <div>
-            <p>Alexson</p>
-          </div>
-            <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-              <div style={{display:'flex'}}>
-              <img className="avatar" src={avatar1} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
+  
+            <div className="creator__info w-100 d-flex align-items-center justify-content-between">
               <div>
-                <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
+                <h6>Created By</h6>
+                <p>{item.creator}</p>
               </div>
-              </div>
+  
               <div>
-                    <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
+                <h6>Current Bid</h6>
+                <p>{item.currentBid} ETH</p>
               </div>
-               
             </div>
-
-            <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-
+          </div>
+  
+          <div className=" mt-3 d-flex align-items-center justify-content-between">
+            <button
+              className="bid__btn d-flex align-items-center gap-1"
+          
+            >
+              <i class="ri-shopping-bag-line"></i> Buy
+            </button>
+  
+           
+  
+            <span className="history__link">
+              <Link to="#">View History</Link>
+            </span>
+          </div>
         </div>
-        <div className="AuctionNft col-lg-3">
-        <img src={img7}/>
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar2} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-        </div>
-        <div className="AuctionNft col-lg-3">
-        <img src={img3}/>
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar3} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-        </div>
-        <div className="AuctionNft col-lg-3">
-          <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>   <img src={img4}/></div>
-      
-
-<div>
-  <p>Alexson</p>
-</div>
-  <div className="AvatarInfo" style={{display:'flex',justifyContent:'space-between'}}>
-    <div style={{display:'flex'}}>
-    <img className="avatar" src={avatar4} style={{borderRadius:'50%',width:'50px',height:'50px'}}/>
-    <div>
-      <span  style={{fontSize:'12px'}}>Created By</span><br/><span>Alexson</span>
-    </div>
-    </div>
-    <div>
-          <span>Price</span><br/><h4 style={{fontSize:'12px'}}>4.33ETH</h4>
-    </div>
-     
-  </div>
-  <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px',marginBottom:'20px'}}>
-    <button style={{background:'crimson',color:'white',border:'none',padding:'2px',width:'120px',borderRadius:'15px'}}>Place a Bid</button>
-    <span>View History</span>
-  </div>
-        </div>
-
-
       </div>
+                </div>
+              ))}
+        </div>
 
-    </div>
+        <div className="container row">
+        
+        {NFT__DATA?.slice(3,7).map((item) => (
+                <div className="col-lg-3 mb-4 md-4 sm-6"  key={item.id}>
+                <div className="single__nft__card">
+        <div className="nft__img">
+          <img src={item.imgUrl} alt="" className="w-100" />
+        </div>
+  
+        <div className="nft__content">
+          <h5 className="nft__title">
+            <Link to={`/details/${item.id}`}>{item.title}</Link>
+          </h5>
+  
+          <div className="creator__info-wrapper d-flex gap-3">
+            <div className="creator__img">
+              <img src={item.creatorImg} alt="" className="w-100" />
+            </div>
+  
+            <div className="creator__info w-100 d-flex align-items-center justify-content-between">
+              <div>
+                <h6>Created By</h6>
+                <p>{item.creator}</p>
+              </div>
+  
+              <div>
+                <h6>Current Bid</h6>
+                <p>{item.currentBid} ETH</p>
+              </div>
+            </div>
+          </div>
+  
+          <div className=" mt-3 d-flex align-items-center justify-content-between">
+            <button
+              className="bid__btn d-flex align-items-center gap-1"
+          
+            >
+              <i class="ri-shopping-bag-line"></i> Buy
+            </button>
+  
+           
+  
+            <span className="history__link">
+              <Link to="#">View History</Link>
+            </span>
+          </div>
+        </div>
+      </div>
+                </div>
+              ))}
+        </div>
+      </div>
+    
 
 
  
 
 
-    <div className="SellContainer container">
+    <div className="SellContainer">
       <div className="sell row ">
         <div className="nfts col-lg-3">
           <div style={{background:'crimson',width:'50px',height:'50px',padding:'6px',display:'flex',alignItems:'center',justifyContent:'center'}}>
@@ -636,7 +486,7 @@ function Home({modal}) {
         </div>
         <div className="nfts col-lg-3">
         <div style={{background:'crimson',width:'50px',height:'50px',padding:'6px',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <h4>1</h4>
+                  <h4>2</h4>
           </div>
           <div>
             <h2>Create your collection</h2>
@@ -646,7 +496,7 @@ function Home({modal}) {
         </div>
         <div className="nfts col-lg-3">
         <div style={{background:'crimson',width:'50px',height:'50px',padding:'6px',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <h4>1</h4>
+                  <h4>3</h4>
           </div>
           <div>
             <h2>Add your NFTs</h2>
@@ -656,7 +506,7 @@ function Home({modal}) {
         </div>
         <div className="nfts col-lg-3">
         <div style={{background:'crimson',width:'50px',height:'50px',padding:'6px',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <h4>1</h4>
+                  <h4>4</h4>
           </div>
           <div>
             <h2>SetUp your wallet</h2>

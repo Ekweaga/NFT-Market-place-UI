@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-
+import {FaBars} from "react-icons/fa"
 
 import { NavLink, Link } from "react-router-dom";
 
@@ -75,7 +75,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="nav__right d-flex align-items-center gap-5 ">
+          <div className="nav__right d-flex align-items-center gap-5 justify-content-center p-2">
             <button className="btn d-flex gap-2 align-items-center">
               <span>
                 <i class="ri-wallet-line"></i>
@@ -84,7 +84,7 @@ const Navbar = () => {
             </button>
 
             <span className="mobile__menu">
-              <i class="ri-menu-line" onClick={toggleMenu}></i>
+              <FaBars onClick={toggleMenu}/>
             </span>
           </div>
         </div>
