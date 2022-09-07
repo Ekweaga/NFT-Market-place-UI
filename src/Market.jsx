@@ -1,9 +1,16 @@
 import React,{useState} from 'react'
 import {NFT__DATA} from "./data.js"
+import Modal from './Modal';
 import {Link} from "react-router-dom"
 
 function Market() {
   const [data,setData] = useState(NFT__DATA)
+  const [showmodal,setshowmodal] =useState(false)
+
+  const modalShow = () =>{
+    setshowmodal(!showmodal)
+  }
+
 
   const handleCategory = (e) => {
     const filterValue = e.target.value;
@@ -147,7 +154,7 @@ function Market() {
 
         <div className=" mt-3 d-flex align-items-center justify-content-between">
           <button
-            className="bid__btn d-flex align-items-center gap-1"
+            className="bid__btn d-flex align-items-center gap-1" onClick={modalShow}
         
           >
             <i class="ri-shopping-bag-line"></i> Buy
@@ -166,6 +173,9 @@ function Market() {
           </div>
         </div>
       </section>
+      {
+        showmodal && <Modal modalShow={modalShow}/>
+      }
     </>
     
   )

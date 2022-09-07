@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './App.css';
 import Footer from './Footer';
 import Home from './Home';
@@ -16,16 +16,17 @@ function App() {
 
   const [showmodal,setshowmodal] =useState(false)
 
-  const modal = () =>{
+  const modalShow = () =>{
     setshowmodal(!showmodal)
   }
+
   return (
     <div className="App">
       <Navbar/><br/><br/><br/><br/><br/>
 
       <Switch>
         <Route path="/" exact>
-        <Home modal={modal}/>
+        <Home modalShow={modalShow}/>
         </Route>
         <Route path="/home" exact>
         <Home/>
@@ -37,7 +38,7 @@ function App() {
           <Contact/>
         </Route>
         <Route path="/market">
-          <Market/>
+          <Market modalShow={modalShow}/>
         </Route>
         <Route path="/wallet">
           <Connect/>
@@ -48,7 +49,7 @@ function App() {
         </Route>
       </Switch>
       {
-        showmodal && <Modal modal={modal}/>
+        showmodal && <Modal modalShow={modalShow}/>
       }
     
     

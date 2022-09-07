@@ -1,6 +1,6 @@
 import React from 'react'
 import hero from "./images/hero.jpg"
-
+import { useState,useEffect } from 'react';
 import avatar1 from "./images/ava-01.png"
 import avatar2 from "./images/ava-02.png"
 import avatar3 from "./images/ava-03.png"
@@ -9,8 +9,15 @@ import {NFT__DATA} from "./data.js"
 import {Link} from "react-router-dom"
 import {BiPencil} from "react-icons/bi"
 import {MdOutlineExplore} from "react-icons/md"
+import Modal from './Modal';
 
-function Home({modal}) {
+function Home() {
+  const [showmodal,setshowmodal] =useState(false)
+
+  const modalShow = () =>{
+    setshowmodal(!showmodal)
+  }
+
  
 
   return (
@@ -75,9 +82,7 @@ function Home({modal}) {
 
         <div className=" mt-3 d-flex align-items-center justify-content-between">
           <button
-            className="bid__btn d-flex align-items-center gap-1"
-        
-          >
+            className="bid__btn d-flex align-items-center gap-1" onClick={modalShow}>
             <i class="ri-shopping-bag-line"></i> Buy
           </button>
 
@@ -395,7 +400,7 @@ function Home({modal}) {
   
           <div className=" mt-3 d-flex align-items-center justify-content-between">
             <button
-              className="bid__btn d-flex align-items-center gap-1"
+              className="bid__btn d-flex align-items-center gap-1" onClick={modalShow}
           
             >
               <i class="ri-shopping-bag-line"></i> Buy
@@ -447,7 +452,7 @@ function Home({modal}) {
   
           <div className=" mt-3 d-flex align-items-center justify-content-between">
             <button
-              className="bid__btn d-flex align-items-center gap-1"
+              className="bid__btn d-flex align-items-center gap-1" onClick={modalShow}
           
             >
               <i class="ri-shopping-bag-line"></i> Buy
@@ -518,6 +523,9 @@ function Home({modal}) {
       </div>
 
     </div>
+    {
+        showmodal && <Modal modalShow={modalShow}/>
+      }
     </>
   )
 }
