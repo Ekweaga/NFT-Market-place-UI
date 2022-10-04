@@ -1,132 +1,13 @@
 .App {
  
-  background:linear-gradient(to left, black,crimson);
+ background:#1C121F;
   
-  height:100%;
-  width:100%;
+ 
   color:white;
 }
-a{
-  text-decoration: none;
-}
-li{
-  list-style:none;
-}
-.header {
-  width: 100%;
-  height: 70px;
-  line-height: 70px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 111111;
-}
 
-.header__shrink {
-  background: #14141f;
-  box-shadow: 2px 2px 4px -2px crimson;
-}
 
-.navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.nav__list {
-  display: flex;
-  align-items: center;
-  column-gap: 2.7rem;
-  margin-bottom: 0;
-}
-
-.nav__item a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.nav__item a:hover {
-  color: #fff;
-}
-
-.active {
-  color: #e250e5 !important;
-}
-
-.logo h2 {
-  background: linear-gradient(-45deg, #0a0a0a, white, crimson, white);
-  background-size: 100% 100%;
-  background-clip: text;
-  -webkit-text-stroke: 3px transparent;
-  -webkit-text-fill-color: #14141f;
-  margin-bottom: 0;
-}
-
-.nav__right .btn {
-  padding: 7px 25px;
-  border: 1px solid white;
-  border-radius: 50px;
-}
-
-.nav__right .btn a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.8rem;
-}
-
-.nav__right .btn span i {
-  color: #fff;
-}
-
-.nav__right .btn a:hover {
-  color: #fff;
-}
-
-.mobile__menu {
-  color: #fff;
-  font-size: 1.3rem;
-  display: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .nav__menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#14141f83, #14141f83);
-    z-index: 222222;
-    display: none;
-  }
-
-  .active__menu {
-    display: block;
-  }
-  .nav__list {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background: #343444;
-    z-index: 333333;
-    flex-direction: column;
-    padding-top: 40px;
-  }
-
-  .mobile__menu {
-    display: block;
-  }
-
-  .btn {
-    padding: 4px 25px !important;
-  }
-
-  .btn a {
-    font-size: 0.7rem !important;
-  }
-}
 .modal__wrapper {
   position: fixed;
   top: 0;
@@ -294,7 +175,7 @@ li{
   color: #fff;
   border-radius: 50px;
   transition: 0.3s;
-  background: crimson;
+  background: #E7B226;
 }
 
 .bid__btn:hover {
@@ -331,7 +212,7 @@ select{
   border-radius: 5px;
   cursor: pointer;
   margin-top:20px;
-  border: 1px solid crimson;
+  border: 1px solid #E7B226;
 }
 .Header{
   display:flex;
@@ -358,8 +239,8 @@ select{
   background-color: transparent;
   border: 1px solid white;
   padding:4px;
-  border-radius: 6px;
-  width:100px;
+  border-radius: 15px;
+  width:150px;
   color:white;
 
 }
@@ -398,9 +279,16 @@ select{
 .nfts{
   width:250px;
   height:330px;
-  background:black;
+ 
   padding-top:8px;
 
+}
+.nfts h2{
+  font-size:20px;
+  margin-bottom: 15px;
+}
+.nfts p{
+  font-size: 16px;
 }
 .sellers{
   display:flex;
@@ -458,6 +346,9 @@ select{
 }
 
 @media only screen and (max-width: 992px) {
+  .Header img{
+    width:300px;
+  }
   .sell{
     width:100%;
   }
@@ -474,6 +365,11 @@ select{
   }
   .Img img{
     width:340px;
+  }
+}
+@media only screen and (width:360px){
+  .Img img{
+    width:300px;
   }
 }
 

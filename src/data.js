@@ -113,6 +113,23 @@ export const NFT__DATA = [
       category:'Trending Cards'
     },
   ];
+
+
+
+  export const CATEGORY = [
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+      
+    }
+  ]
   
 
   export const SELLER__DATA = [

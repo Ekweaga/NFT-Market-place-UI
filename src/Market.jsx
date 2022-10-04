@@ -82,7 +82,7 @@ function Market() {
   return (
     <>
     <div className="bg">
-<h2>Market Place</h2>
+<h2 className="font-bold text-3xl">Market Place</h2>
 </div>
 
 <section>

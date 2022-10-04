@@ -1,10 +1,18 @@
 import React from 'react'
 import {useParams,Link} from "react-router-dom"
 import {NFT__DATA} from "./data.js"
+import {useState} from 'react'
+import Modal from './Modal';
 
 
 function NftDetails() {
   const {id} = useParams();
+  const [data,setData] = useState(NFT__DATA)
+  const [showmodal,setshowmodal] =useState(false)
+
+  const modalShow = () =>{
+    setshowmodal(!showmodal)
+  }
  
 
   const NFT = NFT__DATA.find((item)=>item.id === id)
@@ -35,7 +43,7 @@ function NftDetails() {
           <p>{NFT.desc}</p>
         </div>
         <div>
-          <button style={{width:'250px',padding:'5px',background:'black',color:'white',borderRadius:'20px'}}>Buy</button>
+          <button style={{width:'250px',padding:'5px',background:'black',color:'white',borderRadius:'20px',border:'none'}} onClick={modalShow}>Buy</button>
         </div>
 
       </div>
@@ -75,7 +83,7 @@ function NftDetails() {
 
         <div className=" mt-3 d-flex align-items-center justify-content-between">
           <button
-            className="bid__btn d-flex align-items-center gap-1"
+            className="bid__btn d-flex align-items-center gap-1" onClick={modalShow}
         
           >
             <i class="ri-shopping-bag-line"></i> Buy
@@ -93,6 +101,9 @@ function NftDetails() {
             ))}
 
     </div>
+    {
+        showmodal && <Modal modalShow={modalShow}/>
+      }
    
     </>
   )

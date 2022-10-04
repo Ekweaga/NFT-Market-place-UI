@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 
 import {FaBars} from "react-icons/fa"
+import logo from "./images/logonft.png"
+import btn from "./images/hbtn.png"
 
 import { NavLink, Link } from "react-router-dom";
 
@@ -10,11 +12,11 @@ const NAV__LINKS = [
     url: "/home",
   },
   {
-    display: "Market",
+    display: "Explore",
     url: "/market",
   },
   {
-    display: "Create",
+    display: "Creators",
     url: "/create",
   },
   {
@@ -46,20 +48,17 @@ const Navbar = () => {
   const toggleMenu = () => menuRef.current.classList.toggle("active__menu");
 
   return (
-    <header className="header" ref={headerRef}>
-      <div className="container">
-        <div className="navigation">
-          <div className="logo">
-            <h2 className=" d-flex gap-2 align-items-center ">
-              <span>
-                <i class="ri-fire-fill"></i>
-              </span>
-              NFTs
-            </h2>
+    <header className="-z-10 text-sm" ref={headerRef}>
+     
+        <div className="flex justify-between p-2">
+          <div className="ml-[30px]">
+          
+             <img src={logo} className="w-[60px]"/>
+            
           </div>
 
-          <div className="nav__menu" ref={menuRef} onClick={toggleMenu}>
-            <ul className="nav__list">
+          <div className="flex justify-between items-center mr-[150px] gap-[20px]"  onClick={toggleMenu}>
+            <ul className="flex items-center gap-[25px]">
               {NAV__LINKS.map((item, index) => (
                 <li className="nav__item" key={index}>
                   <NavLink
@@ -73,22 +72,12 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+            <div><img src={btn} className="w-[100px] cursor-pointer"/></div>
           </div>
 
-          <div className="nav__right d-flex align-items-center gap-5 justify-content-center p-2">
-            <button className="btn d-flex gap-2 align-items-center">
-              <span>
-                <i class="ri-wallet-line"></i>
-              </span>
-              <Link to="/wallet">Connect Wallet</Link>
-            </button>
-
-            <span className="mobile__menu">
-              <FaBars onClick={toggleMenu}/>
-            </span>
-          </div>
+        
         </div>
-      </div>
+      
     </header>
   );
 };

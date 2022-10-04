@@ -10,6 +10,40 @@ import {Link} from "react-router-dom"
 import {BiPencil} from "react-icons/bi"
 import {MdOutlineExplore} from "react-icons/md"
 import Modal from './Modal';
+import bg from "./images/blurbg.png"
+import blurbg from "./images/blureffect.png"
+import heroimg from "./images/Hero.png"
+import binance from "./images/binance 1.png"
+import bitmex from "./images/bitmex 1.png"
+import vector from "./images/Vector.png"
+import ellipse from "./images/Ellipse.png"
+import aut1 from "./images/aut1.png"
+import aut2 from "./images/aut2.png"
+import aut3 from "./images/aut3.png"
+import arrbtn from "./images/arrbtn.png"
+import blurr from "./images/Blurr.png"
+import autbg from "./images/autbg.png"
+import view from "./images/view.png"
+import step1 from "./images/Step1.png"
+import step2 from "./images/Step2.png"
+import step3 from "./images/Step3.png"
+import step4 from "./images/Step4.png"
+import arrflow from "./images/workflow.png"
+import proround from "./images/pround.png"
+import p1 from "./images/p1.png"
+import p2 from "./images/p2.png"
+import p3 from "./images/p3.png"
+import bid1 from "./images/Bid1.png"
+import bid2 from "./images/Bid2.png"
+import bid3 from "./images/Bid3.png"
+import creator1 from "./images/1.png"
+import creator2 from "./images/2.png"
+import creator3 from "./images/3.png"
+import bgg from "./images/Pattern.png"
+import explore from "./images/Button.png"
+import createbtn from "./images/createbtn.png"
+import scroll from "./images/Scroll.png"
+import rec from "./images/Rectangle.png"
 
 function Home() {
   const [showmodal,setshowmodal] =useState(false)
@@ -21,508 +55,174 @@ function Home() {
  
 
   return (
-  <>  <div className="Header">
-         <div className="HeaderContent row container">
-           <div className="col-lg-8">
-              <h1>
-            Discover rare digital art and collect sell extraordinary NFTs
-             </h1>
-             <p>Discover rare digital art and collect sell extraordinary NFTsDiscover rare digital art and collect sell extraordinary NFTsDiscover rare digital art and collect sell extraordinary NFTs
-             </p>
-
-            <div style={{display:'flex',gap:'20px'}} className="mb-5">
-               <button><MdOutlineExplore/>Explore</button> <button><BiPencil/> Create</button>
-            </div>
+  <> 
+  <div style={{background:`url(${bg})`}}>
+  <div  className='flex flex-col md:flex-row items-center justify-center mb-[100px] md:w-[90%] mx-auto'>
+    <div className="flex flex-col md:w-[550px] mt-[50px] p-3">
+      <h1 className="md:text-6xl text-5xl font-bold md:leading-[80px]">Explore,Buy and Sell the <span className='text-[#FFCE4E]'>Best NFTs!</span></h1>
+      <div className="mt-[30px] flex items-center gap-[20px] justify-center w-[290px]"><img src={explore} className="w-[120px]"/> <img src={createbtn} className="w-[120px]"/></div>
+      <div className="mt-[30px] flex items-center gap-[80px]">
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="font-bold text-3xl">400+</h2>
+          <p className='text-sm'>Artworks</p>
         </div>
-
-        <div className="col-lg-4">
-          <img src={hero} alt="images"/>
+        <div className="flex flex-col items-center justify-center">
+        <h2 className="font-bold text-3xl">40+</h2>
+          <p className='text-sm'>Auctions</p>
         </div>
-
-      </div>
-
-    </div>
-
-    <div className="Auction container" style={{marginBottom:'100px'}}>
-      <div style={{display:'flex',justifyContent:'space-between'}}>
-        <h3>Live Auction</h3>
-        <span> <button style={{background:'transparent',color:'white',border:'1px solid white',width:'100px',borderRadius:'20px'}}><MdOutlineExplore/>Explore</button></span>
-      </div><br/><br/>
-      <div className="container row">
-        
-      {NFT__DATA?.slice(0,4).map((item) => (
-              <div className="col-lg-3 mb-4 md-4 sm-6"  key={item.id}>
-              <div className="single__nft__card">
-      <div className="nft__img">
-        <img src={item.imgUrl} alt="" className="w-100" />
-      </div>
-
-      <div className="nft__content">
-        <h5 className="nft__title">
-          <Link to={`/details/${item.id}`}>{item.title}</Link>
-        </h5>
-
-        <div className="creator__info-wrapper d-flex gap-3">
-          <div className="creator__img">
-            <img src={item.creatorImg} alt="" className="w-100" />
-          </div>
-
-          <div className="creator__info w-100 d-flex align-items-center justify-content-between">
-            <div>
-              <h6>Created By</h6>
-              <p>{item.creator}</p>
-            </div>
-
-            <div>
-              <h6>Current Bid</h6>
-              <p>{item.currentBid} ETH</p>
-            </div>
-          </div>
-        </div>
-
-        <div className=" mt-3 d-flex align-items-center justify-content-between">
-          <button
-            className="bid__btn d-flex align-items-center gap-1" onClick={modalShow}>
-            <i class="ri-shopping-bag-line"></i> Buy
-          </button>
-
-         
-
-          <span className="history__link">
-            <Link to="#">View History</Link>
-          </span>
+        <div className="flex flex-col items-center justify-center">
+        <h2 className="font-bold text-3xl">10+</h2>
+          <p className='text-sm'>Creators</p>
         </div>
       </div>
     </div>
-              </div>
-            ))}
-      </div>
-    
-      </div>
+    <div className='p-5 z-50  relative' style={{background:`url(${bg})`}}>
+      <img src={scroll} className="absolute -left-[80px] -bottom-[80px] w-[150px] hidden md:block"/>
 
-
-   
-    <div className="Sellers container">
-      
-      <div className="sellers">
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'50px',height:'50px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-
-      </div>
-
+    <img src={heroimg} className="w-[400px] -z-10 mt-[30px]"/>
 
     </div>
+  </div>
+  </div> 
 
-    <div className="Sellers container">
-      
-      <div className="sellers">
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
+  <div className="grid md:grid-cols-4 grid-cols-2 mt-[50px] w-[90%] mx-auto gap-[20px] items-center ">
+    <img src={binance} className="w-[200px]"/>
+    <img src={bitmex} className="w-[200px]"/>
+    <img src={vector} className="w-[200px]"/>
+    <img src={binance} className="w-[200px]"/>
+  </div>
 
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar1} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-         <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'50px',height:'50px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar2} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar3} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-        <div style={{display:'flex'}} className="m-3">
-          <img src={avatar4} style={{width:'70px',height:'70px',borderRadius:'50%'}} alt="images"/>
-          <div>
-            <h4>Jennifer</h4>
-            <p>5.99ETH</p>
-
-          </div>
-        </div>
-
-      </div>
-
-
-    </div>
-
-    <div className="Auction container" style={{marginBottom:'20px'}}>
-      <div style={{display:'flex',justifyContent:'space-between'}}>
-        <h3>Trending</h3>
-        
-      </div>
-
-      <div className="container row">
-        
-        {NFT__DATA?.slice(2,6).map((item) => (
-                <div className="col-lg-3 mb-4 md-4 sm-6"  key={item.id}>
-                <div className="single__nft__card">
-        <div className="nft__img">
-          <img src={item.imgUrl} alt="" className="w-100" />
-        </div>
-  
-        <div className="nft__content">
-          <h5 className="nft__title">
-            <Link to={`/details/${item.id}`}>{item.title}</Link>
-          </h5>
-  
-          <div className="creator__info-wrapper d-flex gap-3">
-            <div className="creator__img">
-              <img src={item.creatorImg} alt="" className="w-100" />
-            </div>
-  
-            <div className="creator__info w-100 d-flex align-items-center justify-content-between">
-              <div>
-                <h6>Created By</h6>
-                <p>{item.creator}</p>
-              </div>
-  
-              <div>
-                <h6>Current Bid</h6>
-                <p>{item.currentBid} ETH</p>
-              </div>
-            </div>
-          </div>
-  
-          <div className=" mt-3 d-flex align-items-center justify-content-between">
-            <button
-              className="bid__btn d-flex align-items-center gap-1" onClick={modalShow}
-          
-            >
-              <i class="ri-shopping-bag-line"></i> Buy
-            </button>
-  
-           
-  
-            <span className="history__link">
-              <Link to="#">View History</Link>
-            </span>
-          </div>
-        </div>
-      </div>
-                </div>
-              ))}
-        </div>
-
-        <div className="container row">
-        
-        {NFT__DATA?.slice(3,7).map((item) => (
-                <div className="col-lg-3 mb-4 md-4 sm-6"  key={item.id}>
-                <div className="single__nft__card">
-        <div className="nft__img">
-          <img src={item.imgUrl} alt="" className="w-100" />
-        </div>
-  
-        <div className="nft__content">
-          <h5 className="nft__title">
-            <Link to={`/details/${item.id}`}>{item.title}</Link>
-          </h5>
-  
-          <div className="creator__info-wrapper d-flex gap-3">
-            <div className="creator__img">
-              <img src={item.creatorImg} alt="" className="w-100" />
-            </div>
-  
-            <div className="creator__info w-100 d-flex align-items-center justify-content-between">
-              <div>
-                <h6>Created By</h6>
-                <p>{item.creator}</p>
-              </div>
-  
-              <div>
-                <h6>Current Bid</h6>
-                <p>{item.currentBid} ETH</p>
-              </div>
-            </div>
-          </div>
-  
-          <div className=" mt-3 d-flex align-items-center justify-content-between">
-            <button
-              className="bid__btn d-flex align-items-center gap-1" onClick={modalShow}
-          
-            >
-              <i class="ri-shopping-bag-line"></i> Buy
-            </button>
-  
-           
-  
-            <span className="history__link">
-              <Link to="#">View History</Link>
-            </span>
-          </div>
-        </div>
-      </div>
-                </div>
-              ))}
-        </div>
-      </div>
-    
-
-
+  <div className="auctionsContainer mt-[50px] relative md:p-[50px] md:h-[750px] flex flex-col items-center justify-center" style={{background:`url(${autbg})`}}>
+    <img src={blurr} className="absolute left-0 md:-top-[350px] -top[350px]"/>
  
+    <div className='md:w-[40%] mx-auto flex items-center justify-center bg-transparent relative'>
+   
+     <img src={ellipse} className="w-[60px] z-10 -mr-[40px] "/> <h1 className="text-center text-3xl z-40 bg-transparent font-bold">Live Auctions</h1>
+    </div>
 
+    <div className=" md:w-[88%] relative ">
+      <img src={arrbtn} className="absolute right-0 top-8 w-[80px] hidden md:block"/>
+      <div className="auctions flex flex-col md:flex-row items-center md:justify-around md:w-[88%] mx-auto  mt-[100px] gap-[20px]">
+      <img src={aut1} className="h-[400px]  w-[350px]"/>
+    <img src={aut2} className="h-[400px]  w-[350px]"/>
+    <img src={aut2} className="h-[400px]  w-[350px]"/>
+    <img src={aut2} className="h-[400px]  w-[350px]"/>
+      </div>
+   
+    </div>
 
-    <div className="SellContainer">
-      <div className="sell row ">
-        <div className="nfts col-lg-3">
-          <div style={{background:'crimson',width:'50px',height:'50px',padding:'6px',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <h4>1</h4>
-          </div>
-          <div>
-            <h2>SetUp your wallet</h2>
-            <p>Discover rare digital art and collect sell extraordinary NFTsDiscover rare digital art and collect sell extraordinary NFTsDiscover rare digital
-               art and collect sell extraordinary NFT</p>
-          </div>
+    <div><img src={view} className="w-[150px] mt-[50px] bg-transparent"/></div>
+  </div>
 
-        </div>
-        <div className="nfts col-lg-3">
-        <div style={{background:'crimson',width:'50px',height:'50px',padding:'6px',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <h4>2</h4>
-          </div>
-          <div>
-            <h2>Create your collection</h2>
-            <p>Discover rare digital art and collect sell extraordinary NFTsDiscover rare digital art and collect sell extraordinary NFTsDiscover rare digital
-               art and collect sell extraordinary NFT</p>
-          </div>
-        </div>
-        <div className="nfts col-lg-3">
-        <div style={{background:'crimson',width:'50px',height:'50px',padding:'6px',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <h4>3</h4>
-          </div>
-          <div>
-            <h2>Add your NFTs</h2>
-            <p>Discover rare digital art and collect sell extraordinary NFTsDiscover rare digital art and collect sell extraordinary NFTsDiscover rare digital
-               art and collect sell extraordinary NFT</p>
-          </div>
-        </div>
-        <div className="nfts col-lg-3">
-        <div style={{background:'crimson',width:'50px',height:'50px',padding:'6px',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                  <h4>4</h4>
-          </div>
-          <div>
-            <h2>SetUp your wallet</h2>
-            <p>Discover rare digital art and collect sell extraordinary NFTsDiscover rare digital art and collect sell extraordinary NFTsDiscover rare digital
-               art and collect sell extraordinary NFT</p>
-          </div>
-        </div>
+  <div className='WorksFlow mt-[50px] relative '>
+    <img src={blurbg} className="absolute -top-[500px] left-[50px]"/>
+
+    <h1 className="text-center text-3xl font-bold">How It Works</h1>
+    <div className="works flex md:w-[70%] mx-auto mt-[40px] flex-col md:flex-row gap-[80px] md:gap-0">
+      <div className="flex items-center justify-center flex-col md:flex-row ">
+        <img src={step1} className="w-[120px]"/>
+        <img src={arrflow} className="w-[100px] h-[10px] rotate-90 md:rotate-0 mt-[60px] md:mt-0"/>
+
+      </div>
+      <div className="flex items-center justify-center flex-col md:flex-row">
+        <img src={step2} className="w-[120px]"/>
+        <img src={arrflow} className="w-[100px] h-[10px] rotate-90 md:rotate-0 mt-[60px] md:mt-0"/>
+
+      </div>
+      <div className="flex items-center justify-center flex-col md:flex-row">
+        <img src={step3} className="w-[120px]"/>
+        <img src={arrflow} className="w-[100px] h-[10px] rotate-90 md:rotate-0 mt-[60px] md:mt-0"/>
+
+      </div>
+      <div className="flex items-center justify-center flex-col md:flex-row">
+        <img src={step1} className="w-[120px]"/>
+        <img src={arrflow} className="w-[100px]  h-[10px] rotate-90 md:rotate-0 mt-[60px] md:mt-0"/>
+
+       
+
+      </div>
+      <div className="flex items-center justify-center">
+        <img src={step4} className="w-[120px]"/>
+       
 
       </div>
 
     </div>
+  </div>
+
+  <div className="popularCategories mt-[90px] relative md:p-[50px] md:h-[600px] flex flex-col items-center justify-center" >
+    <img src={rec} className="absolute -top-[500px] left-[50px]"/>
+ 
+ <div className='md:w-[40%] mx-auto flex items-center justify-center bg-transparent relative'>
+
+  <img src={proround} className="w-[60px] z-10 -mr-[40px] "/> <h1 className="text-center text-3xl z-40 bg-transparent font-bold">Popular Collections</h1>
+ </div>
+
+ <div className=" md:w-[88%] relative ">
+   <img src={arrbtn} className="absolute right-0 top-8 w-[80px] hidden md:block"/>
+   <div className="auctions flex flex-col md:flex-row items-center justify-around md:w-[88%] mx-auto  mt-[100px] gap-[20px]">
+   <img src={p1} className="h-[300px] w-[350px]"/>
+ <img src={p2} className="h-[300px] w-[350px]"/>
+ <img src={p3} className="h-[300px] w-[350px]"/>
+ <img src={p1} className="h-[300px] w-[350px]"/>
+   </div>
+
+ </div>
+
+ <div><img src={view} className="w-[150px] mt-[50px] bg-transparent"/></div>
+</div>
+
+
+
+
+<div className="auctionsContainer mt-[50px] relative md:p-[50px] md:h-[800px] flex flex-col items-center justify-center" style={{background:`url(${autbg})`}}>
+<img src={blurbg} className="absolute -top-[300px] left-[50px]"/>
+    <div className='md:w-[40%] mx-auto flex items-center justify-center bg-transparent relative'>
+   
+     <img src={ellipse} className="w-[60px] z-10 -mr-[40px] "/> <h1 className="text-center text-3xl z-40 bg-transparent font-bold">Explore By Categories</h1>
+    </div>
+
+    <div className=" md:w-[88%] relative ">
+      <img src={arrbtn} className="absolute right-0 top-8 w-[80px] hidden md:block"/>
+      <div className="auctions flex flex-col md:flex-row items-center justify-around md:w-[88%] mx-auto  mt-[100px] gap-[20px]">
+      <img src={bid1} className="h-[350px] w-[350px]"/>
+    <img src={bid2} className="h-[350px] w-[350px]"/>
+    <img src={bid3} className="h-[350px] w-[350px]"/>
+    <img src={bid2} className="h-[350px] w-[350px]"/>
+      </div>
+   
+    </div>
+
+    <div><img src={view} className="w-[150px] mt-[50px] bg-transparent"/></div>
+  </div>
+
+
+  <div className="creatorsContainer">
+  <div className='md:w-[40%] mx-auto flex items-center justify-center bg-transparent relative mt-[50px]'>
+
+<img src={proround} className="w-[60px] z-10 -mr-[40px] "/> <h1 className="text-center text-3xl z-40 bg-transparent font-bold">Top Creators</h1>
+</div>
+    <div className="creators grid grid-cols-1 md:grid-cols-2 gap-[10px] md:w-[80%] mx-auto mt-[50px] mb-[50px]">
+
+      <img src={creator1} className="w-[380px]"/>
+        <img src={creator2} className="w-[380px]"/>
+        <img src={creator3} className="w-[380px]"/>
+          <img src={creator1} className="w-[380px]"/>
+
+    </div>
+
+  </div>
+
+  <div className="subscribeContainer w-[100%] h-[300px] flex items-center justify-center" style={{background:`url(${bgg})`,backgroundSize:'cover',backgroundRepeat:'none'}}>
+    <div className="subscribe flex flex-col items-center justify-center relative">
+    <img src={blurr} className="absolute left-[200px] -top-[150px]  rounded-full"/>
+      <h1 className="md:text-3xl text-2xl font-bold m-[20px]">Ready for Next NFT Drop</h1>
+      <div className="flex flex-col md:flex-row items-center justify-center">
+        <input type="text" placeholder="info@gmail.com" className="border-1 border-[#E7B226] bg-transparent p-2 w-[250px]"/><button className="bg-[#E7B226] w-[250px] md:w-[150px] mt-[20px] md:mt-0  h-[42px] text-black">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  
     {
         showmodal && <Modal modalShow={modalShow}/>
       }

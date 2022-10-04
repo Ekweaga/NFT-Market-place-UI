@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;1,800&family=Permanent+Marker&display=swap');
 
-body,*{
+body{
   font-family:Montserrat , Permanent Maker;
  
   margin:0;
   padding:0;
+  background-color: #1C121F;
+  overflow-x:hidden;
 }
-body::-webkit-scrollbar{
-  width:1px;
-  height:20px;
-}
-body::-webkit-scrollbar-thumb{
-  background:linear-gradient(to left, black,crimson);
-      border-radius:20px;
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
